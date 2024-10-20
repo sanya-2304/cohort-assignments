@@ -5,9 +5,9 @@ function calculateTime(n) {
         sum += i;
     }
 
-    const endTime = performance.now();
+    const endTime = performance.now()/1000;
 
-    return (endTime - startTime) / 1000;
+    return (endTime - startTime);
 }
 
 console.log('Time for sum from 1 to 100:', calculateTime(100));

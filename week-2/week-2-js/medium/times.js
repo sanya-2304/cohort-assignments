@@ -9,5 +9,15 @@ There is no automated test for this one, this is more for you to understand time
 */
 
 function calculateTime(n) {
-    return 0.01;
+    let i=0;
+    let timeBefore=performance.now();
+    
+    while(i<100){
+        i++;
+    }
+    let timeAfter=performance.now();
+    let ans=(timeAfter-timeBefore)
+    return ans;
 }
+
+console.log(calculateTime(100))
