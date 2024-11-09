@@ -5,6 +5,7 @@ const app = express();
 
 function logRequests(req, res, next) {
     // write the logic for request log here
+   
 }
 
 app.use(logRequests);

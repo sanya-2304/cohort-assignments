@@ -9,6 +9,14 @@ const VALID_API_KEY = '100xdevs_cohort3_super_secret_valid_api_key'; // key is 1
 // Middleware to check for a valid API key
 function authenticateAPIKey(req, res, next) {
     //  authenticate APIKey here
+    const apikey=req.header('apiKey')
+    if(apikey && apikey===VALID_API_KEY){
+        return next()
+    }
+    else{
+        return res.status(401).json({message:'Inavalid or missing api key'})
+    }
+    
 }
 
 app.use(authenticateAPIKey);
@@ -17,6 +25,8 @@ app.get('/', (req, res) => {
     res.status(200).json({ message: 'Access granted' });
 });
 
-module.exports = app;
+app.listen(1000, ()=>{
+    console.log('server runnig on 1000')
+})
 
 
